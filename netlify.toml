@@ -1,0 +1,23 @@
+# Configurações de build para o Netlify
+[build]
+  # Comando para instalar dependências com YARN e construir o projeto.
+  # Isso resolve o erro ERESOLVE, pois respeita o arquivo yarn.lock.
+  command = "yarn install && yarn build"
+
+  # Diretório onde os arquivos do build final são colocados.
+  publish = "dist"
+
+# Configurações de ambiente para garantir consistência
+[build.environment]
+  NODE_VERSION = "18"
+  YARN_VERSION = "1.22.19"
+
+# Regra de redirecionamento para Single Page Applications (SPA)
+[[redirects]]
+  # Redireciona todas as requisições que não encontram um arquivo...
+  from = "/*"
+  # ...para o index.html.
+  to = "/index.html"
+  # Retorna um status 200 para que o React Router possa assumir o controle.
+  # Isso corrige o erro "Page Not Found" ao atualizar a página em rotas como /agent/123.
+  status = 200

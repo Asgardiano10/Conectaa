@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-bgmain text-gray-100 font-sans;
+}
+
+.card {
+  @apply bg-gradient-to-br from-secondary/60 to-bgmain/40 backdrop-blur-sm border border-gray-700/50;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-lg bg-primary hover:bg-primary/80 text-white font-medium transition-all duration-200 active:scale-95;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 rounded-lg bg-secondary hover:bg-secondary/80 text-white font-medium transition-all duration-200 active:scale-95;
+}
+
+.input {
+  @apply w-full px-3 py-2 rounded-lg bg-secondary border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+}
+
+.sidebar-item {
+  @apply flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-secondary/50 transition-all duration-200 cursor-pointer;
+}
+
+.sidebar-item.active {
+  @apply text-white bg-primary/20 border-l-4 border-primary;
+}
+
+/* FullCalendar custom styles */
+.fc {
+  @apply text-white;
+}
+
+.fc-toolbar {
+  @apply bg-secondary/50 rounded-lg p-4 mb-4;
+}
+
+.fc-button-primary {
+  @apply bg-primary border-primary hover:bg-primary/80;
+}
+
+.fc-daygrid-day {
+  @apply bg-secondary/20 border-gray-600;
+}
+
+.fc-daygrid-day:hover {
+  @apply bg-secondary/40;
+}
+
+.fc-event {
+  @apply bg-primary/80 border-primary text-white;
+}
+
+.fc-event:hover {
+  @apply bg-primary;
+}
